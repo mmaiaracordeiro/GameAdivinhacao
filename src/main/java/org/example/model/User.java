@@ -1,14 +1,15 @@
 package org.example.model;
 
-import org.example.dto.UserDto;
-import org.example.util.DBConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.example.dto.UserDto;
+import org.example.util.DBConnection;
+
 public class User {
+
     public static UserDto authenticate(String email, String password) {
         Connection conn = DBConnection.getConnection();
         try {
