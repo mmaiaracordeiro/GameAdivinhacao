@@ -16,15 +16,15 @@ public class GamePanel extends JPanel {
 
     public GamePanel(Janela parent) {
         this.parent = parent;
-        this.gameController = new GameController(1);  // Supondo que o ID do usuário é 1
+        this.gameController = new GameController(1);
 
         setLayout(new GridLayout(3, 2));
 
-        add(new JLabel("Guess the number:"));
+        add(new JLabel("Adivinhe o número:\n"));
         guessField = new JTextField();
         add(guessField);
 
-        JButton guessButton = new JButton("Guess");
+        JButton guessButton = new JButton("Adivinhar");
         guessButton.addActionListener(new GuessListener());
         add(guessButton);
 

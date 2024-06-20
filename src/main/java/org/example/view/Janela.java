@@ -12,7 +12,6 @@ public class Janela extends JFrame {
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
 
-        // Adiciona painéis ao mainPanel
         mainPanel.add(new RegisterPanel(this), "register");
         mainPanel.add(new LoginPanel(this), "login");
         mainPanel.add(new GamePanel(this), "game");

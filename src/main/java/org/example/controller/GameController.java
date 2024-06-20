@@ -20,13 +20,13 @@ public class GameController {
             hits++;
             GameHistory.saveGameHistory(userId, attempts, hits, misses);
             resetGame();
-            return "Correct! The number was " + secretNumber;
+            return "Correto! O número era " + secretNumber;
         } else {
             misses++;
             if (guess < secretNumber) {
-                return "Too low!";
+                return "Muito baixo!";
             } else {
-                return "Too high!";
+                return "Muito alto!";
             }
         }
     }

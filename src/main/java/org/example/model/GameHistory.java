@@ -12,8 +12,6 @@ public class GameHistory {
     private int hits;
     private int misses;
 
-    // Getters and Setters
-
     public static void saveGameHistory(int userId, int attempts, int hits, int misses) {
         Connection conn = DBConnection.getConnection();
         try {
