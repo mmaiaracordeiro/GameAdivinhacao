@@ -26,55 +26,6 @@ Acesse o MySQL:
 ```cmd
 mysql -u root -p <\
 ```
-Crie o banco de dados e tabelas: 
-
-```mysql
-CREATE DATABASE GuessingGame;
-USE GuessingGame;
-```
-```mysql
-CREATE TABLE Users (
-id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(50),
-email VARCHAR(50),
-password VARCHAR(50) );
-```
-```mysql
-CREATE TABLE GameHistory (
-id INT AUTO_INCREMENT PRIMARY KEY,
-user_name VARCHAR(50),
-attempts INT,
-hits INT,
-misses INT );
-```
-Compile o Projeto: 
-```cmd
-mvn clean install
-```
-Execute a Aplicação:
-```cmd
-mvn exec:java -Dexec.mainClass="org.example.Main"
-```
-
-## 📋 Funcionamento das Funcionalidades\
-Tela de Registro
-
-3\. **Funcionamento das Funcionalidades**'\
-- Tela de Registro\
-Nome: Campo para inserir o nome do usuário.\
-Email: Campo para inserir o email do usuário.\
-Senha: Campo para inserir a senha do usuário.\
-Botão Registrar: Realiza o registro do usuário no banco de dados.\
-- Tela de Login\
-Email: Campo para inserir o email do usuário.\
-Senha: Campo para inserir a senha do usuário.\
-Botão Login: Autentica o usuário e inicia o jogo.\
-Botão Registrar: Leva o usuário à tela de registro.\
-- Tela do Jogo\
-Campo de Palpite: Campo para inserir o palpite do número.\
-Botão Adivinhar: Verifica se o palpite está correto e dá feedback.\
-Botão Voltar: Retorna à tela de login para que o usuário possa sair ou criar um novo usuário.
-
 ## 🗂️ Script do Banco de Dados
 
 O script SQL para criar o banco de dados e as tabelas necessárias está incluído na seção de configuração do banco de dados:
@@ -102,6 +53,33 @@ acertos INT,
 erros INT
 );
 ```
+Compile o Projeto: 
+```cmd
+mvn clean install
+```
+Execute a Aplicação:
+```cmd
+java -Dexec.mainClass="org.example.Main"
+```
+
+## 📋 Funcionamento das Funcionalidades\
+Tela de Registro
+
+3\. **Funcionamento das Funcionalidades**'\
+- Tela de Registro\
+Nome: Campo para inserir o nome do usuário.\
+Email: Campo para inserir o email do usuário.\
+Senha: Campo para inserir a senha do usuário.\
+Botão Registrar: Realiza o registro do usuário no banco de dados.\
+- Tela de Login\
+Email: Campo para inserir o email do usuário.\
+Senha: Campo para inserir a senha do usuário.\
+Botão Login: Autentica o usuário e inicia o jogo.\
+Botão Registrar: Leva o usuário à tela de registro.\
+- Tela do Jogo\
+Campo de Palpite: Campo para inserir o palpite do número.\
+Botão Adivinhar: Verifica se o palpite está correto e dá feedback.\
+Botão Voltar: Retorna à tela de login para que o usuário possa sair ou criar um novo usuário.
 
 ## 🔧 Tecnologias Utilizadas
 - Java
