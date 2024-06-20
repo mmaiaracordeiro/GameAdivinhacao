@@ -1,7 +1,7 @@
 package org.example.view;
 
 import org.example.controller.LoginController;
-import org.example.model.User;
+import org.example.dto.UserDto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,10 +37,10 @@ public class LoginPanel extends JPanel {
         String email = emailField.getText();
         String password = new String(passwordField.getPassword());
 
-        User user = LoginController.authenticate(email, password);
+        UserDto user = LoginController.authenticate(email, password);
         if (user != null) {
             JOptionPane.showMessageDialog(this, "Login Successful!");
-            parent.showCard("game");
+            parent.startGame(user.getName());
         } else {
             JOptionPane.showMessageDialog(this, "Invalid credentials.");
         }

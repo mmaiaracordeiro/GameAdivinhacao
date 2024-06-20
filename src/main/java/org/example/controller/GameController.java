@@ -3,38 +3,34 @@ package org.example.controller;
 import org.example.model.GameHistory;
 
 public class GameController {
-    private int secretNumber;
-    private int attempts;
-    private int hits;
+    private int numeroSecreto;
+    private int tentativas;
+    private int acertos;
     private int misses;
-    private int userId;
+    private String nomeUsuario;
 
-    public GameController(int userId) {
-        this.userId = userId;
+    public GameController(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
         resetGame();
     }
 
     public String checkGuess(int guess) {
-        attempts++;
-        if (guess == secretNumber) {
-            hits++;
-            GameHistory.saveGameHistory(userId, attempts, hits, misses);
+        tentativas++;
+        if (guess == numeroSecreto) {
+            acertos++;
+            GameHistory.saveGameHistory(new GameHistory(nomeUsuario, tentativas, acertos, misses));
             resetGame();
-            return "Correto! O número era " + secretNumber;
+            return "PARABÉNS, VOCÊ ACERTOU!!!!";
         } else {
             misses++;
-            if (guess < secretNumber) {
-                return "Muito baixo!";
-            } else {
-                return "Muito alto!";
-            }
+            return guess < numeroSecreto ? "Muito baixo!" : "Muito alto!";
         }
     }
 
     private void resetGame() {
-        this.secretNumber = (int) (Math.random() * 100 + 1);
-        this.attempts = 0;
-        this.hits = 0;
+        this.numeroSecreto = (int) (Math.random() * 100 + 1);
+        this.tentativas = 0;
+        this.acertos = 0;
         this.misses = 0;
     }
 }
